@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Film{% endblock %}
+
+{% block body %}
+<div class="breadcrumbs">
+            <div class="breadcrumbs-inner">
+                <div class="row m-0">
+                    <div class="col-sm-4">
+                        <div class="page-header float-left">
+                            <div class="page-title">
+                                <h1>Film</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="page-header float-right">
+                            <div class="page-title">
+                                <ol class="breadcrumb text-right">
+
+                                    <li><a href="#">Film</a></li>
+                                    <li class="active">Data table</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+                        <div class="card">
+                            <div class="card-header">
+                                <a href={{path('add_Film')}}><button type="button" class="btn btn-primary" style="float: right;">+ Ajouter</button></a>
+                            </div>
+                            <div class="card-body">
+                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>id_film</th>
+                                            <th>avatar</th>
+                                            <th>titre</th>
+                                            <th>duree</th>
+                                            <th>date_sortie</th>
+                                            <th>realisateur</th>
+                                            <th>categorie</th>
+                                            <th>qualite</th>
+                                            <th>lien</th>
+                                            <th>Supprimer</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                   
+                                        
+                                    {% for film in Films %}
+                                        
+                                        <tr>
+                                            <td>{{film.id}}</td>
+                                            <td>{{film.avatar}}</td>
+                                            <td>{{film.titre}}</td>
+                                            <td>{{film.duree}}</td>
+                                            <td>{{film.dateS}}</td>
+                                            <td>{{film.realisateur}}</td>
+                                            <td>{{film.categorie}}</td>
+                                            <td>{{film.qualite}}</td>
+                                            <td>{{film.lien}}</td>
+                                            <td>
+                                             <a href={{path('delete_film',{'id':film.id})}}><button class="btn btn-danger" onclick="myFunction()">Supprimer</button></a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %} 
+                                        
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+    
+{% endblock %}

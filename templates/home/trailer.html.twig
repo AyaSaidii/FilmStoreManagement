@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}WATCH IT{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+            <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+            <link rel="stylesheet" href="{{ asset('build/css/Style1.css') }}" >
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="jquery-3.3.1.min.js"></script>
+            <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+            <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
+        {% endblock %}
+
+ 
+
+    </head>
+    <body>
+        {% block body %}
+        {% block mainContent %}
+        <section>
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: black;">
+                <div class="container">
+                    <a class="navbar-brand" href="/home">
+                    <img src="{{ asset('/images/Logo.png') }}" width="165px">
+                    </a>
+                        
+                    </div>
+                </div>
+            </nav>
+        </section>
+        
+        
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 mx-auto wow fadeInUp">
+                        <img width="419" height="610" src={{ asset(FilmOne.avatar) }} alt="">
+                    </div>
+
+                    <div class="col-6 mx-auto wow fadeInUp">
+                        <h1 class="font-weight-bold">{{FilmOne.titre}}</h1>
+                        <pre>
+
+                        </pre>
+                        <h6 align="center ">
+                            <span>Catégorie: {{FilmOne.categorie}} | </span>
+                            <span>Durée: {{FilmOne.duree}} | </span>
+                            <span>Date de sortie: {{FilmOne.dateS}}</span>
+                        </h6>
+                        <pre>
+
+                        </pre>
+                        
+                        <p>{{FilmOne.description}}</p>
+                        <pre>
+
+                        </pre>
+                    </div>   
+                </div> 
+                <div align="center">    
+                </div><br><h1 align="left">Trailer</h1>
+                  
+                <iframe width="1100" height="579"= src={{ asset(FilmOne.lien) }} frameborder="0" autoplay=false></iframe>
+                </div>   
+            </div>
+<br>
+        </section>
+
+
+
+                    
+
+
+                    <div class="container">
+                        <div class="row">
+                                    <h6 style="float: left;">Votre Commentaire :</h6>
+                            <form class="col" action="" method="post">
+                                <div class="col-12">                   
+                                    <textarea name="commentaire" rows="5" cols="93" placeholder="Taper ici ..."></textarea>
+                                    <input value="<?php echo $FilmOne->getId_FilmOne(); ?>" name="id_FilmOne" hidden>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary" >Envoyer</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+<br>
+           
+
+                    {% for Commentaire in FilmOne.commentaires %}
+                    
+                        <br>
+                        <div class="container">
+                        <div class="row">
+                            <div class="col-5" id="bor">   
+                                <h6 style="float: left;">GaddarOm</h6><br>
+                                <p>{{Commentaire.commentaire}}</p><br>
+                                </div>
+                        </div>
+                    </div>    
+                    {% endfor %}
+
+        {% endblock %}
+        {% endblock %}
+
+
+        
+    </body>
+</html>

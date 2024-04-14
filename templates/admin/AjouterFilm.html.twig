@@ -1,0 +1,97 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}Film{% endblock %}
+
+{% block body %}
+
+<div class="wrapper">
+	
+		
+    <!--end header -->
+    <!--start page wrapper -->
+    <div class="page-wrapper">
+        <div class="page-content">
+            <!--breadcrumb-->
+            <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                <div class="breadcrumb-title pe-3">Film</div>
+                <div class="ps-3">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mb-0 p-0">
+                            <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Ajouter</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+            <!--end breadcrumb-->
+          
+            <div class="card">
+              <div class="card-body p-4">
+                  <h5 class="card-title">Ajouter un film</h5>
+                  <hr/>
+                  {{ form_start(form) }}
+                   <div class="form-body mt-4">
+                   
+                    <div class="row ">
+                       <div class="col-lg-8">
+                       <div class="border border-3 p-4 rounded">
+                        <div class="mb-3">
+                            <label for="inputProductTitle" class="form-label">Titre</label>
+                            {{ form_widget(form.titre, {'attr': {'class': 'form-control', 'placeholder': 'Enter product title'}}) }}
+                        </div>
+                          <div class="mb-3">
+                            <label for="inputProductDescription" class="form-label">Description</label>
+                            {{ form_widget(form.description, {'attr': {'class': 'form-control', 'placeholder': 'Enter product description'}}) }}
+                        </div>
+                          <div class="mb-3">
+                            <label for="inputProductTitle" class="form-label">Image</label>
+                            {{ form_widget(form.avatar, {'attr': {'class': 'form-control', 'placeholder': 'Enter product image'}}) }}
+                        </div>
+                           <div class="mb-3">
+                            <label for="inputProductTitle" class="form-label">Trailer</label>
+                            {{ form_widget(form.lien, {'attr': {'class': 'form-control', 'placeholder': 'Enter product trailer'}}) }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputProductTags" class="form-label">Categorie</label>
+                            {{ form_widget(form.categorie, {'attr': {'class': 'form-control', 'placeholder': 'Enter product category'}}) }}
+                        </div>
+                        </div>
+                       </div>
+                       <div class="col-lg-4">
+                        <div class="border border-3 p-4 rounded">
+                          <div class="row g-4">
+                              <div class="col-12">
+                                <label for="inputProductTags" class="form-label">Durée</label>
+                                {{ form_widget(form.duree, {'attr': {'class': 'form-control', 'placeholder': 'Enter product duration'}}) }}
+                            </div>
+                              <div class="col-12">
+                                <label for="inputProductTags" class="form-label">Date</label>
+                                {{ form_widget(form.dateS, {'attr': {'class': 'form-control', 'placeholder': 'Enter product date'}}) }}
+                            </div>
+                            <div class="col-12">
+                                <label for="inputProductTags" class="form-label">Qualité</label>
+                                {{ form_widget(form.qualite, {'attr': {'class': 'form-control', 'placeholder': 'Enter product date'}}) }}
+                            </div>
+                              <div class="col-12">
+                                <label for="inputProductTags" class="form-label">Realisateur</label>
+                                {{ form_widget(form.realisateur, {'attr': {'class': 'form-control', 'placeholder': 'Enter product director'}}) }}
+                            </div>
+                              <div class="col-12">
+                                  <div class="d-grid">
+                                    {{ form_widget(form.Valider, {'attr': {'class': 'btn btn-primary', 'style': 'background-color: #e50916; border: #e50916'}}) }}
+                                </div>
+                              </div>
+                          </div> 
+                      </div>
+                      </div>
+                   </div><!--end row-->
+                   {{ form_end(form) }}
+                </div>
+              </div>
+          </div>
+
+
+        </div>
+    </div>
+{% endblock %}

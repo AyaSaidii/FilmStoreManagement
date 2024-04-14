@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html style="background-color: black;">
+    <head>
+        <meta charset="UTF-8">
+        <meta charset="UTF-8">
+        <title>{% block title %}Inscription{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+        <link rel="stylesheet" href="{{ asset('build/css/Signin.css') }}" >
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="https://kit.fontawesome.com/e56cd262bf.js" crossorigin="anonymous"></script>
+        {% endblock %}
+
+ 
+
+    </head>
+    <body style="background-color: black;">
+
+	<div class="container">
+		<div class="col-12">
+		<div class="d-flex justify-content-center h-100">
+			<div class="card">
+				<div class="card-header">
+				<div align="center">
+                    <a href="<?php echo ViewGenerator::path('/'); ?>"><img src="./images/Logo.png" alt="Logo" width="100%"></a>
+            	</div>
+				</div>
+				<div class="card-body">
+					<form action="<?php echo ViewGenerator::path('userAdd'); ?>" method="post">
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input name="Nom" type="text" class="form-control" placeholder="Nom Complet" required="" autofocus="">
+							
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fa fa-user"></i></i></span>
+							</div>
+	
+							<input name="Username" type="text" class="form-control" placeholder="Username" required="" autofocus="">
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fa fa-key"></i></span>
+							</div>
+	
+							<input name="password" type="password" class="form-control" placeholder="Mot De Passe" required="" autofocus="">
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fa fa-key"></i></span>
+							</div>
+	
+							<input name="re-password" type="re-password" class="form-control" placeholder="Retaper Votre Mot De Passe" required="" autofocus="">
+						</div>
+						<div class="form-group">
+							<input id="btn" type="submit" value="S'inscrire" class="btn float-right login_btn">
+						</div>
+					</form>
+				</div>
+				<div class="card-footer" >
+					<div class="d-flex justify-content-center links" style="color:black">
+						<a href="/" style="color:#ff0000">Se Connecter</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div> 
+    </body>
+</html>
